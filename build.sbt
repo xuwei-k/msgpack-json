@@ -31,7 +31,7 @@ resolvers += "typesafe" at "http://repo.typesafe.com/typesafe/maven-releases"
 libraryDependencies ++= (
   ("net.databinder" %% "unfiltered-filter" % unfilteredVersion) ::
   ("javax.servlet" % "servlet-api" % "2.3" % "provided") ::
-  ("com.github.xuwei-k" %% "msgpack4z-play" % "0.1.0") ::
+  ("com.github.xuwei-k" %% "msgpack4z-play" % "0.1.2") ::
   ("com.github.xuwei-k" % "msgpack4z-java06" % "0.1.0") ::
   Nil
 )
