@@ -11,7 +11,7 @@ licenses := Seq("MIT License" -> url("http://www.opensource.org/licenses/mit-lic
 
 version := "0.1.0-SNAPSHOT"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 scalacOptions ++= (
   "-language:postfixOps" ::
@@ -31,7 +31,7 @@ resolvers += "typesafe" at "http://repo.typesafe.com/typesafe/maven-releases"
 libraryDependencies ++= (
   ("net.databinder" %% "unfiltered-filter" % unfilteredVersion) ::
   ("javax.servlet" % "servlet-api" % "2.3" % "provided") ::
-  ("com.github.xuwei-k" %% "msgpack4z-play" % "0.1.2") ::
-  ("com.github.xuwei-k" % "msgpack4z-java06" % "0.1.1") ::
+  ("com.github.xuwei-k" %% "msgpack4z-play" % "0.1.3") ::
+  ("com.github.xuwei-k" % "msgpack4z-java06" % "0.2.0") ::
   Nil
 )
