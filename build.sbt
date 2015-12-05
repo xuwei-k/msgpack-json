@@ -28,6 +28,8 @@ scalacOptions ++= (
 
 resolvers += "typesafe" at "http://repo.typesafe.com/typesafe/maven-releases"
 
+fullResolvers ~= {_.filterNot(_.name == "jcenter")}
+
 libraryDependencies ++= (
   ("net.databinder" %% "unfiltered-filter" % unfilteredVersion) ::
   ("javax.servlet" % "servlet-api" % "2.3" % "provided") ::
