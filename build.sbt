@@ -13,6 +13,12 @@ version := "0.1.0-SNAPSHOT"
 
 scalaVersion := "2.11.7"
 
+val unusedWarnings = (
+  "-Ywarn-unused-import" ::
+  "-Ywarn-unused" ::
+  Nil
+)
+
 scalacOptions ++= (
   "-language:postfixOps" ::
   "-language:implicitConversions" ::
@@ -21,9 +27,11 @@ scalacOptions ++= (
   "-deprecation" ::
   "-unchecked" ::
   "-Xlint" ::
-  "-Ywarn-unused-import" ::
-  "-Ywarn-unused" ::
   Nil
+) ::: unusedWarnings
+
+Seq(Compile, Test).flatMap(c =>
+  scalacOptions in (c, console) ~= {_.filterNot(unusedWarnings.toSet)}
 )
 
 resolvers += "typesafe" at "http://repo.typesafe.com/typesafe/maven-releases"
