@@ -34,14 +34,12 @@ Seq(Compile, Test).flatMap(c =>
   scalacOptions in (c, console) ~= {_.filterNot(unusedWarnings.toSet)}
 )
 
-resolvers += "typesafe" at "http://repo.typesafe.com/typesafe/maven-releases"
-
 fullResolvers ~= {_.filterNot(_.name == "jcenter")}
 
 libraryDependencies ++= (
   ("net.databinder" %% "unfiltered-filter" % unfilteredVersion) ::
   ("javax.servlet" % "servlet-api" % "2.3" % "provided") ::
-  ("com.github.xuwei-k" %% "msgpack4z-play" % "0.1.3") ::
-  ("com.github.xuwei-k" % "msgpack4z-java06" % "0.2.0") ::
+  ("com.github.xuwei-k" %% "msgpack4z-jawn" % "0.3.1") ::
+  ("com.github.xuwei-k" % "msgpack4z-java07" % "0.2.0") ::
   Nil
 )

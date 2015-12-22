@@ -2,18 +2,17 @@ package msgpack_json
 
 import java.io._
 import msgpack4z._
-import play.api.libs.json.Json
 import unfiltered.request._
 import unfiltered.response._
 import scalaz.{-\/, \/-}
 
 object App {
 
-  private val codec = Play2Msgpack.jsValueCodec(UndefinedHandler.ThrowSysError, PlayUnpackOptions.default)
+  private val codec = JawnMsgpack.jValueCodec(JawnUnpackOptions.default)
 
   def json2bytes(jsonString: String): Array[Byte] = {
-    val json = Json.parse(jsonString)
-    codec.toBytes(json, Msgpack06.defaultPacker)
+    val json = jawn.Parser.parseUnsafe[jawn.ast.JValue](jsonString)
+    codec.toBytes(json, new Msgpack07Packer)
   }
 
   def stream2bytes(in: InputStream): Array[Byte] = {
@@ -34,7 +33,7 @@ object App {
       val str = scala.io.Source.fromInputStream(req.inputStream, "UTF-8").mkString
       Ok ~> ResponseBytes(App.json2bytes(str))
     case req @ POST(Path("/msgpack2json")) =>
-     val unpacker = Msgpack06.defaultUnpacker(stream2bytes(req.inputStream))
+     val unpacker = Msgpack07Unpacker.defaultUnpacker(stream2bytes(req.inputStream))
       App.codec.unpackAndClose(unpacker) match {
         case \/-(a) =>
           Ok ~> JsonContent ~> ResponseString(a.toString)
