@@ -39,7 +39,7 @@ fullResolvers ~= {_.filterNot(_.name == "jcenter")}
 libraryDependencies ++= (
   ("net.databinder" %% "unfiltered-filter" % unfilteredVersion) ::
   ("javax.servlet" % "servlet-api" % "2.3" % "provided") ::
-  ("com.github.xuwei-k" %% "msgpack4z-jawn" % "0.3.1") ::
-  ("com.github.xuwei-k" % "msgpack4z-java07" % "0.2.0") ::
+  ("com.github.xuwei-k" %% "msgpack4z-jawn" % "0.3.2") ::
+  ("com.github.xuwei-k" % "msgpack4z-java" % "0.3.2") ::
   Nil
 )

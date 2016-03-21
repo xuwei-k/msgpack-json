@@ -12,7 +12,7 @@ object App {
 
   def json2bytes(jsonString: String): Array[Byte] = {
     val json = jawn.Parser.parseUnsafe[jawn.ast.JValue](jsonString)
-    codec.toBytes(json, new Msgpack07Packer)
+    codec.toBytes(json, new MsgpackJavaPacker)
   }
 
   def stream2bytes(in: InputStream): Array[Byte] = {
@@ -33,7 +33,7 @@ object App {
       val str = scala.io.Source.fromInputStream(req.inputStream, "UTF-8").mkString
       Ok ~> ResponseBytes(App.json2bytes(str))
     case req @ POST(Path("/msgpack2json")) =>
-     val unpacker = Msgpack07Unpacker.defaultUnpacker(stream2bytes(req.inputStream))
+     val unpacker = MsgpackJavaUnpacker.defaultUnpacker(stream2bytes(req.inputStream))
       App.codec.unpackAndClose(unpacker) match {
         case \/-(a) =>
           Ok ~> JsonContent ~> ResponseString(a.toString)
