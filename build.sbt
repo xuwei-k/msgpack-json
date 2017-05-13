@@ -11,7 +11,7 @@ licenses := Seq("MIT License" -> url("http://www.opensource.org/licenses/mit-lic
 
 version := "0.1.0-SNAPSHOT"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.11"
 
 val unusedWarnings = (
   "-Ywarn-unused-import" ::
@@ -40,6 +40,6 @@ libraryDependencies ++= (
   ("net.databinder" %% "unfiltered-filter" % unfilteredVersion) ::
   ("javax.servlet" % "servlet-api" % "2.3" % "provided") ::
   ("com.github.xuwei-k" %% "msgpack4z-jawn" % "0.3.5") ::
-  ("com.github.xuwei-k" % "msgpack4z-java" % "0.3.4") ::
+  ("com.github.xuwei-k" % "msgpack4z-java" % "0.3.5") ::
   Nil
 )
