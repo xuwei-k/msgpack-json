@@ -7,4 +7,6 @@
   <system-properties>
     <property name="in.gae.j" value="true" />
   </system-properties>
+  <runtime>java8</runtime>
+  <url-stream-handler>urlfetch</url-stream-handler>
 </appengine-web-app>

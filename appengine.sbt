@@ -1,3 +1,3 @@
 sbtappengine.Plugin.webSettings
 
-libraryDependencies += "org.eclipse.jetty" % "jetty-webapp" % "7.4.5.v20110725" % "container"
+libraryDependencies += "org.eclipse.jetty" % "jetty-webapp" % "9.2.21.v20170120" % "container"
