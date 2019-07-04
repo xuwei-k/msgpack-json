@@ -1,4 +1,4 @@
-val unfilteredVersion = "0.9.1"
+val unfilteredVersion = "0.10.0-M4"
 
 name := "msgpack-json"
 
@@ -8,7 +8,7 @@ licenses := Seq("MIT License" -> url("http://www.opensource.org/licenses/mit-lic
 
 version := "0.1.0-SNAPSHOT"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.13.0"
 
 val unusedWarnings = (
   "-Ywarn-unused" ::
@@ -34,7 +34,7 @@ fullResolvers ~= {_.filterNot(_.name == "jcenter")}
 libraryDependencies ++= (
   ("ws.unfiltered" %% "unfiltered-filter" % unfilteredVersion) ::
   ("javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided") ::
-  ("com.github.xuwei-k" %% "msgpack4z-jawn" % "0.3.6") ::
-  ("com.github.xuwei-k" % "msgpack4z-java" % "0.3.5") ::
+  ("com.github.xuwei-k" %% "msgpack4z-jawn" % "0.4.1") ::
+  ("com.github.xuwei-k" % "msgpack4z-java" % "0.3.6") ::
   Nil
 )

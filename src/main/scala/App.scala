@@ -5,6 +5,7 @@ import msgpack4z._
 import unfiltered.request._
 import unfiltered.response._
 import scalaz.{-\/, \/-}
+import org.typelevel.jawn
 
 object App {
 
