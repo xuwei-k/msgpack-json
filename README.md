@@ -1,6 +1,6 @@
 # msgpack-json
 
-[![Build Status](https://secure.travis-ci.org/xuwei-k/msgpack-json.png)](http://travis-ci.org/xuwei-k/msgpack-json)
+[![Build Status](https://travis-ci.com/xuwei-k/msgpack-json.png)](http://travis-ci.com/xuwei-k/msgpack-json)
 
 
 ### example
