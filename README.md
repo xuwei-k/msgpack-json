@@ -1,8 +1,5 @@
 # msgpack-json
 
-[![Build Status](https://travis-ci.com/xuwei-k/msgpack-json.svg)](http://travis-ci.com/xuwei-k/msgpack-json)
-
-
 ### example
 
 #### msgpack binary data => json string
